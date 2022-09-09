@@ -20,7 +20,7 @@
 
 #include <media/v4l2-common.h>
 #include <media/v4l2-ioctl.h>
-
+#include <media/v4l2-uvc.h>
 #include "uvcvideo.h"
 
 #define DRIVER_AUTHOR		"Laurent Pinchart " \
@@ -249,6 +249,7 @@ static struct uvc_format_desc *uvc_format_by_guid(const u8 guid[16])
 }
 
 static u32 uvc_colorspace(const u8 primaries)
+static __u32 uvc_colorspace(const __u8 primaries)
 {
 	static const u8 colorprimaries[] = {
 		0,
